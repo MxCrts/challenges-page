@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.mxcrts.ChallengeTies",
+      "sha256_cert_fingerprints": [
+        "E8:5A:A8:F9:D1:51:C1:DD:43:98:6C:E4:6E:60:3F:10:EF:5F:2F:5B:EF:E5:2A:1D:97:DF:79:2E:0B:D0:BA:27"
+      ]
+    }
+  }
+]
