@@ -1,0 +1,14 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "C3235NU4QN.com.mxcrts.ChallengeTies",
+        "paths": [
+          "/i*",
+          "/challenge/*"
+        ]
+      }
+    ]
+  }
+}
