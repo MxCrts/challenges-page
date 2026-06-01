@@ -2,23 +2,234 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Delete Your ChallengeTies Account</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delete Account — ChallengeTies</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --orange: #F97316;
+      --ink: #0D0D0D;
+      --surface2: #181818;
+      --border: rgba(249,115,22,0.18);
+      --text: #F8F4EE;
+      --text-muted: rgba(248,244,238,0.55);
+      --text-dim: rgba(248,244,238,0.35);
+      --red: #EF4444;
+      --red-soft: rgba(239,68,68,0.10);
+      --red-border: rgba(239,68,68,0.25);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Comfortaa', system-ui, sans-serif;
+      background-color: var(--ink);
+      color: var(--text);
+      line-height: 1.75;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+    header {
+      background: linear-gradient(135deg, #0D0D0D 0%, #1a0505 100%);
+      border-bottom: 1px solid var(--red-border);
+      padding: 3rem 1.5rem 2.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      top: -80px; left: 50%; transform: translateX(-50%);
+      width: 500px; height: 300px;
+      background: radial-gradient(ellipse, rgba(239,68,68,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .logo-pill {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: rgba(249,115,22,0.12); border: 1px solid rgba(249,115,22,0.30);
+      border-radius: 999px; padding: 8px 18px; margin-bottom: 1.5rem;
+      font-size: 13px; font-weight: 700; color: var(--orange);
+      letter-spacing: 0.5px; text-transform: uppercase;
+    }
+    header h1 {
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
+      font-weight: 700; color: var(--text); line-height: 1.2; margin-bottom: 0.75rem;
+    }
+    header h1 em { font-style: normal; color: var(--red); }
+    .header-sub { font-size: 14px; color: var(--text-muted); max-width: 480px; margin: 0 auto; }
+    main { max-width: 680px; margin: 0 auto; padding: 3rem 1.5rem 5rem; display: flex; flex-direction: column; gap: 1.5rem; }
+
+    /* Warning banner */
+    .warning {
+      background: var(--red-soft);
+      border: 1px solid var(--red-border);
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      display: flex; align-items: flex-start; gap: 14px;
+    }
+    .warning-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+    .warning-text { font-size: 13.5px; color: rgba(248,244,238,0.72); line-height: 1.6; }
+    .warning-text strong { color: var(--red); }
+
+    /* Steps card */
+    .card {
+      background: var(--surface2);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px;
+      padding: 1.75rem 2rem;
+    }
+    .card-title {
+      font-size: 11px; font-weight: 700; color: var(--orange);
+      letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1.5rem;
+    }
+    .steps { display: flex; flex-direction: column; gap: 16px; }
+    .step { display: flex; align-items: flex-start; gap: 16px; }
+    .step-num {
+      flex-shrink: 0;
+      width: 34px; height: 34px; border-radius: 50%;
+      background: rgba(249,115,22,0.12);
+      border: 1.5px solid rgba(249,115,22,0.30);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 700; color: var(--orange);
+    }
+    .step-body { padding-top: 6px; }
+    .step-title { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 3px; }
+    .step-desc { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+    .step-connector {
+      width: 1px; height: 16px;
+      background: rgba(249,115,22,0.18);
+      margin-left: 17px;
+    }
+
+    /* What gets deleted */
+    .deleted-list { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-top: 0.5rem; }
+    .deleted-list li {
+      font-size: 13.5px; color: var(--text-muted);
+      padding-left: 22px; position: relative;
+    }
+    .deleted-list li::before { content: '✕'; position: absolute; left: 0; color: var(--red); font-size: 11px; font-weight: 700; top: 3px; }
+
+    /* Alternative */
+    .alt-card {
+      background: rgba(249,115,22,0.06);
+      border: 1px solid rgba(249,115,22,0.18);
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+    }
+    .alt-title { font-size: 13px; font-weight: 700; color: var(--orange); margin-bottom: 6px; }
+    .alt-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+    a { color: var(--orange); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    footer {
+      background: var(--surface2); border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 2rem 1.5rem; text-align: center;
+    }
+    .footer-logo { font-size: 1.1rem; font-weight: 700; color: var(--orange); margin-bottom: 0.5rem; }
+    footer p { font-size: 12px; color: var(--text-dim); margin: 0; }
+    footer a { color: var(--text-muted); }
+    footer a:hover { color: var(--orange); }
+  </style>
 </head>
-<body style="font-family:sans-serif;max-width:600px;margin:2rem auto;line-height:1.5">
-  <h1>How to permanently delete your ChallengeTies account</h1>
-  <ol>
-    <li>Open the <strong>ChallengeTies</strong> app and log in.</li>
-    <li>Go to <em>Settings &gt; Delete Account</em>.</li>
-    <li>Confirm you want to delete your account.</li>
-  </ol>
+<body>
+
+<header>
+  <div class="logo-pill"><span>⚡</span> ChallengeTies</div>
+  <h1>Delete Your <em>Account</em></h1>
+  <p class="header-sub">This action is permanent and cannot be undone. Please read carefully before proceeding.</p>
+</header>
+
+<main>
+
+  <!-- Warning -->
+  <div class="warning">
+    <div class="warning-icon">⚠️</div>
+    <div class="warning-text">
+      <strong>This action is irreversible.</strong> Once your account is deleted, all your data will be permanently erased from our servers. There is no recovery option.
+    </div>
+  </div>
+
+  <!-- Steps -->
+  <div class="card">
+    <div class="card-title">How to delete your account</div>
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="step-title">Open ChallengeTies</div>
+          <div class="step-desc">Launch the app on your device and make sure you are logged in to the account you wish to delete.</div>
+        </div>
+      </div>
+      <div class="step-connector"></div>
+
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <div class="step-title">Go to Settings</div>
+          <div class="step-desc">Tap the <strong style="color:var(--text)">Settings</strong> icon in the bottom navigation bar (gear icon, bottom right).</div>
+        </div>
+      </div>
+      <div class="step-connector"></div>
+
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <div class="step-title">Tap "Delete Account"</div>
+          <div class="step-desc">Scroll to the bottom of Settings and tap <strong style="color:var(--red)">Delete Account</strong>.</div>
+        </div>
+      </div>
+      <div class="step-connector"></div>
+
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <div class="step-title">Confirm deletion</div>
+          <div class="step-desc">Read the confirmation prompt carefully and confirm. Your account will be deleted immediately and permanently.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- What gets deleted -->
+  <div class="card">
+    <div class="card-title">What will be permanently deleted</div>
+    <ul class="deleted-list">
+      <li>Your profile (username, email, profile photo)</li>
+      <li>All challenge progress and completion history</li>
+      <li>Your streaks, trophies, and rewards</li>
+      <li>All duo partnerships and pending invitations</li>
+      <li>Your leaderboard rankings</li>
+      <li>All personal data associated with your account</li>
+    </ul>
+    <p style="margin-top:1rem; font-size:13px; color:var(--text-muted)">
+      Note: cancelling an active subscription must be done separately through your Apple App Store or Google Play account settings before deleting your ChallengeTies account.
+    </p>
+  </div>
+
+  <!-- Can't access the app? -->
+  <div class="alt-card">
+    <div class="alt-title">Can't access the app?</div>
+    <div class="alt-desc">
+      If you are unable to log in or access the app, you can request account deletion by emailing us directly at
+      <a href="mailto:support@challengeties.app">support@challengeties.app</a> from the email address associated with your account. We will process your request within 30 days as required by GDPR.
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-logo">ChallengeTies</div>
   <p>
-    This will erase all your data (profile, saved challenges, progress, …) from our
-    servers irreversibly.
+    &copy; 2026 Maxime Cortes. All rights reserved. &nbsp;·&nbsp;
+    <a href="/privacy-policy">Privacy Policy</a> &nbsp;·&nbsp;
+    <a href="/terms">Terms of Use</a> &nbsp;·&nbsp;
+    <a href="mailto:support@challengeties.app">Contact</a>
   </p>
-  <p>
-    If you run into any issue, write to
-    <a href="mailto:support@challengeties.app">support@challengeties.app</a>.
-  </p>
+</footer>
+
 </body>
 </html>
