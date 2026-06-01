@@ -3,86 +3,335 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ChallengeTies - Terms of Use</title>
+  <title>Terms of Use — ChallengeTies</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --orange: #F97316;
+      --orange-deep: #EA6C0A;
+      --ink: #0D0D0D;
+      --surface2: #181818;
+      --border: rgba(249,115,22,0.18);
+      --text: #F8F4EE;
+      --text-muted: rgba(248,244,238,0.55);
+      --text-dim: rgba(248,244,238,0.35);
+      --radius: 16px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f9fafb;
-      color: #111827;
-      line-height: 1.6;
+      font-family: 'Comfortaa', system-ui, sans-serif;
+      background-color: var(--ink);
+      color: var(--text);
+      line-height: 1.75;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
     }
     header {
-      background-color: #ffb800;
-      color: #111;
-      padding: 2rem 1rem;
+      background: linear-gradient(135deg, #0D0D0D 0%, #1a0a00 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 3rem 1.5rem 2.5rem;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      top: -80px; left: 50%; transform: translateX(-50%);
+      width: 500px; height: 300px;
+      background: radial-gradient(ellipse, rgba(249,115,22,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .logo-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(249,115,22,0.12);
+      border: 1px solid rgba(249,115,22,0.30);
+      border-radius: 999px;
+      padding: 8px 18px;
+      margin-bottom: 1.5rem;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--orange);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
     }
     header h1 {
-      margin: 0;
-      font-size: 2rem;
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
     }
-    main {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+    header h1 em { font-style: normal; color: var(--orange); }
+    .header-meta {
+      font-size: 13px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      flex-wrap: wrap;
     }
-    h2 {
-      margin-top: 2rem;
-      font-size: 1.3rem;
-      color: #ffb800;
+    .header-meta .dot { width: 3px; height: 3px; border-radius: 50%; background: var(--text-dim); }
+    main { max-width: 780px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+    .toc {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem 2rem;
+      margin-bottom: 3rem;
     }
-    p {
-      margin: 0.8rem 0;
+    .toc-title {
+      font-size: 11px; font-weight: 700; color: var(--orange);
+      letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1rem;
     }
+    .toc ol {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 24px;
+    }
+    @media (max-width: 540px) { .toc ol { grid-template-columns: 1fr; } }
+    .toc ol li a {
+      color: var(--text-muted); text-decoration: none; font-size: 13px;
+      transition: color 0.2s; display: flex; align-items: center; gap: 8px;
+    }
+    .toc ol li a:hover { color: var(--orange); }
+    .toc ol li a::before {
+      content: attr(data-num); font-size: 10px; font-weight: 700;
+      color: var(--orange); opacity: 0.6; min-width: 18px;
+    }
+    section {
+      margin-bottom: 2.5rem; padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    section:last-of-type { border-bottom: none; }
+    .section-header { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 1.25rem; }
+    .section-num {
+      flex-shrink: 0; width: 32px; height: 32px; border-radius: 8px;
+      background: rgba(249,115,22,0.12); border: 1px solid rgba(249,115,22,0.25);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 700; color: var(--orange); margin-top: 3px;
+    }
+    h2 { font-size: 1.15rem; font-weight: 700; color: var(--text); line-height: 1.3; }
+    p { color: var(--text-muted); margin-bottom: 0.9rem; }
+    p:last-child { margin-bottom: 0; }
+    ul.legal-list {
+      list-style: none; margin: 0.75rem 0;
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    ul.legal-list li {
+      color: var(--text-muted); padding-left: 20px;
+      position: relative; font-size: 14px;
+    }
+    ul.legal-list li::before { content: '•'; position: absolute; left: 0; color: var(--orange); font-weight: 700; }
+    .callout {
+      background: rgba(249,115,22,0.07); border: 1px solid rgba(249,115,22,0.22);
+      border-radius: 12px; padding: 1rem 1.25rem; margin: 1rem 0;
+      font-size: 13.5px; color: rgba(248,244,238,0.75);
+    }
+    .callout strong { color: var(--orange); }
+    a { color: var(--orange); text-decoration: none; }
+    a:hover { text-decoration: underline; }
     footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
-      color: #6b7280;
+      background: var(--surface2); border-top: 1px solid var(--border);
+      padding: 2rem 1.5rem; text-align: center;
     }
-    a {
-      color: #ffb800;
-      text-decoration: none;
+    .footer-logo { font-size: 1.1rem; font-weight: 700; color: var(--orange); margin-bottom: 0.5rem; }
+    footer p { font-size: 12px; color: var(--text-dim); margin: 0; }
+    footer a { color: var(--text-muted); }
+    footer a:hover { color: var(--orange); }
+    .back-top {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 12px; font-weight: 700; color: var(--text-dim);
+      text-decoration: none; margin-top: 2rem; transition: color 0.2s;
     }
-    a:hover {
-      text-decoration: underline;
-    }
+    .back-top:hover { color: var(--orange); text-decoration: none; }
   </style>
 </head>
 <body>
-  <header>
-    <h1>ChallengeTies - Terms of Use</h1>
-  </header>
 
-  <main>
-    <p>Welcome to <strong>ChallengeTies</strong>. By creating an account or using our app, you agree to the following Terms of Use. Please read them carefully.</p>
+<header id="top">
+  <div class="logo-pill"><span>⚡</span> ChallengeTies</div>
+  <h1>Terms of <em>Use</em></h1>
+  <div class="header-meta">
+    <span>Effective date: June 1, 2025</span>
+    <span class="dot"></span>
+    <span>Last updated: June 1, 2026</span>
+    <span class="dot"></span>
+    <span>Version 2.0</span>
+  </div>
+</header>
 
-    <h2>1. Acceptance of Terms</h2>
-    <p>By accessing and using ChallengeTies, you agree to be bound by these Terms and our <a href="/privacy.html">Privacy Policy</a>. If you do not agree, please do not use the app.</p>
+<main>
 
-    <h2>2. User Responsibilities</h2>
-    <p>You agree to use ChallengeTies in a respectful and lawful manner. You must not post, share, or promote content that is harmful, abusive, hateful, or violates the rights of others.</p>
+  <nav class="toc" aria-label="Table of contents">
+    <div class="toc-title">Contents</div>
+    <ol>
+      <li><a href="#s1" data-num="01">Acceptance of Terms</a></li>
+      <li><a href="#s2" data-num="02">Eligibility</a></li>
+      <li><a href="#s3" data-num="03">Account Registration</a></li>
+      <li><a href="#s4" data-num="04">Subscription & Payments</a></li>
+      <li><a href="#s5" data-num="05">User-Generated Content</a></li>
+      <li><a href="#s6" data-num="06">Prohibited Conduct</a></li>
+      <li><a href="#s7" data-num="07">Intellectual Property</a></li>
+      <li><a href="#s8" data-num="08">Disclaimer of Warranties</a></li>
+      <li><a href="#s9" data-num="09">Limitation of Liability</a></li>
+      <li><a href="#s10" data-num="10">Indemnification</a></li>
+      <li><a href="#s11" data-num="11">Termination</a></li>
+      <li><a href="#s12" data-num="12">Governing Law</a></li>
+      <li><a href="#s13" data-num="13">Changes to Terms</a></li>
+      <li><a href="#s14" data-num="14">Contact</a></li>
+    </ol>
+  </nav>
 
-    <h2>3. User-Generated Content</h2>
-    <p>We moderate all user-generated content. Any inappropriate content may be removed without notice. You can also report objectionable content directly in the app.</p>
+  <div class="callout">
+    Please read these Terms of Use carefully before using ChallengeTies. By accessing or using the app, you agree to be bound by these Terms. If you do not agree, do not use the app.
+  </div>
 
-    <h2>4. Prohibited Behavior</h2>
-    <p>It is strictly forbidden to engage in harassment, bullying, hate speech, or any abusive behavior. Users engaging in such actions may be banned permanently.</p>
+  <section id="s1">
+    <div class="section-header"><div class="section-num">01</div><h2>Acceptance of Terms</h2></div>
+    <p>By downloading, installing, or using ChallengeTies ("the App", "the Service"), you confirm that you have read, understood, and agree to be bound by these Terms of Use ("Terms") and our <a href="/privacy">Privacy Policy</a>.</p>
+    <p>These Terms constitute a legally binding agreement between you ("User", "you") and Maxime Cortes, an individual operating ChallengeTies as a sole trader ("I", "me", "we"). ChallengeTies is an independent mobile application published on the Apple App Store and Google Play Store.</p>
+  </section>
 
-    <h2>5. Account Termination</h2>
-    <p>We reserve the right to suspend or delete accounts that violate these Terms or our community standards.</p>
+  <section id="s2">
+    <div class="section-header"><div class="section-num">02</div><h2>Eligibility</h2></div>
+    <p>You must be at least 13 years of age to use ChallengeTies. If you are under 18, you confirm that your parent or legal guardian has reviewed and agreed to these Terms on your behalf.</p>
+    <p>By using the App, you represent that you have the legal capacity to enter into this agreement and that your use complies with all laws applicable in your country of residence.</p>
+  </section>
 
-    <h2>6. Changes to Terms</h2>
-    <p>We may update these Terms from time to time. Continued use of the app means you accept the updated Terms.</p>
+  <section id="s3">
+    <div class="section-header"><div class="section-num">03</div><h2>Account Registration</h2></div>
+    <p>To access certain features you must create an account. You agree to:</p>
+    <ul class="legal-list">
+      <li>Provide accurate, current, and complete information during registration</li>
+      <li>Keep your password secure and confidential</li>
+      <li>Accept responsibility for all activity that occurs under your account</li>
+      <li>Notify us immediately at <a href="mailto:support@challengeties.app">support@challengeties.app</a> of any unauthorized use</li>
+    </ul>
+    <p>We reserve the right to refuse registration or terminate accounts at our sole discretion.</p>
+  </section>
 
-    <h2>7. Contact</h2>
-    <p>If you have any questions regarding these Terms, please contact us at: <a href="mailto:support@challengeties.app">support@challengeties.app</a>.</p>
-  </main>
+  <section id="s4">
+    <div class="section-header"><div class="section-num">04</div><h2>Subscription & In-App Purchases</h2></div>
+    <p>ChallengeTies offers free and premium features. Premium access is available via auto-renewing subscriptions and one-time purchases processed through Apple App Store or Google Play Store.</p>
+    <ul class="legal-list">
+      <li>All purchases are subject to the payment terms of the applicable platform</li>
+      <li>Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current period</li>
+      <li>You can manage and cancel subscriptions in your device account settings at any time</li>
+      <li>We do not issue refunds for partially used subscription periods, except where required by applicable law</li>
+      <li>Prices may vary by region and are subject to change with reasonable notice</li>
+    </ul>
+    <div class="callout">
+      <strong>Apple users:</strong> Purchases are subject to Apple's <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank">Licensed Application End User License Agreement</a>.<br/>
+      <strong>Google Play users:</strong> Purchases are governed by Google Play's Terms of Service.
+    </div>
+  </section>
 
-  <footer>
-    &copy; 2025 ChallengeTies. All rights reserved.
-  </footer>
+  <section id="s5">
+    <div class="section-header"><div class="section-num">05</div><h2>User-Generated Content</h2></div>
+    <p>ChallengeTies allows users to create challenges, usernames, and other content ("User Content"). By submitting User Content, you grant us a non-exclusive, worldwide, royalty-free license to use, display, and distribute such content solely in connection with operating the Service.</p>
+    <p>You represent that:</p>
+    <ul class="legal-list">
+      <li>You own or have the necessary rights to the content you submit</li>
+      <li>Your content does not infringe any third-party rights</li>
+      <li>Your content complies with these Terms and applicable law</li>
+    </ul>
+    <p>We reserve the right to remove any User Content we deem inappropriate or in violation of these Terms. Users may report objectionable content directly within the App.</p>
+  </section>
+
+  <section id="s6">
+    <div class="section-header"><div class="section-num">06</div><h2>Prohibited Conduct</h2></div>
+    <p>You agree not to use ChallengeTies to:</p>
+    <ul class="legal-list">
+      <li>Violate any applicable local, national, or international law or regulation</li>
+      <li>Harass, bully, threaten, or abuse other users</li>
+      <li>Post hateful, discriminatory, obscene, or defamatory content</li>
+      <li>Impersonate any person or misrepresent your identity</li>
+      <li>Collect other users' personal data without their consent</li>
+      <li>Distribute spam, malware, or harmful software</li>
+      <li>Attempt to gain unauthorized access to the Service or its infrastructure</li>
+      <li>Reverse engineer or decompile any part of the App</li>
+      <li>Use automated bots or scrapers to interact with the Service</li>
+    </ul>
+    <p>Violations may result in immediate suspension or permanent termination of your account.</p>
+  </section>
+
+  <section id="s7">
+    <div class="section-header"><div class="section-num">07</div><h2>Intellectual Property</h2></div>
+    <p>All content, features, and functionality of the App — including text, graphics, logos, icons, and software — are the property of Maxime Cortes / ChallengeTies or its licensors and are protected by applicable intellectual property laws.</p>
+    <p>You are granted a limited, non-exclusive, non-transferable, revocable license to use the App for personal, non-commercial purposes only. You may not copy, modify, distribute, sell, or lease any part of the Service without prior written consent.</p>
+    <p>The "ChallengeTies" name and logo are trademarks of Maxime Cortes. Nothing in these Terms grants you any right to use them.</p>
+  </section>
+
+  <section id="s8">
+    <div class="section-header"><div class="section-num">08</div><h2>Disclaimer of Warranties</h2></div>
+    <p>THE APP IS PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.</p>
+    <p>We do not warrant that the App will be uninterrupted, error-free, or secure at all times. ChallengeTies is a habit-tracking tool — it is not a medical, therapeutic, or professional service of any kind.</p>
+  </section>
+
+  <section id="s9">
+    <div class="section-header"><div class="section-num">09</div><h2>Limitation of Liability</h2></div>
+    <p>TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, MAXIME CORTES / CHALLENGETIES SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING OUT OF YOUR USE OF, OR INABILITY TO USE, THE APP.</p>
+    <p>IN NO EVENT SHALL TOTAL LIABILITY EXCEED THE AMOUNT YOU PAID IN THE TWELVE (12) MONTHS PRECEDING THE CLAIM, OR EUR €100, WHICHEVER IS GREATER.</p>
+    <p>If you are a consumer resident in the European Union, nothing in these Terms limits your statutory rights under applicable EU consumer protection law.</p>
+  </section>
+
+  <section id="s10">
+    <div class="section-header"><div class="section-num">10</div><h2>Indemnification</h2></div>
+    <p>You agree to defend and hold harmless Maxime Cortes / ChallengeTies from any claims, damages, costs, or expenses (including reasonable legal fees) arising from your use of the App, your violation of these Terms, or any content you submit through the App.</p>
+  </section>
+
+  <section id="s11">
+    <div class="section-header"><div class="section-num">11</div><h2>Termination</h2></div>
+    <p>We may suspend or terminate your account at any time if we reasonably believe you have violated these Terms.</p>
+    <p>You may delete your account at any time from within the App (Settings → Delete Account) or by contacting us at <a href="mailto:support@challengeties.app">support@challengeties.app</a>. Upon deletion, your personal data will be handled in accordance with our <a href="/privacy">Privacy Policy</a>.</p>
+    <p>All provisions that by their nature should survive termination shall survive, including intellectual property rights, disclaimers, and limitations of liability.</p>
+  </section>
+
+  <section id="s12">
+    <div class="section-header"><div class="section-num">12</div><h2>Governing Law</h2></div>
+    <p>These Terms are governed by and construed in accordance with the laws of France, without regard to conflict of law provisions.</p>
+    <p>Any dispute arising from these Terms shall first be attempted to be resolved informally by contacting us at <a href="mailto:support@challengeties.app">support@challengeties.app</a>. If unresolved within 30 days, disputes may be submitted to the competent courts of France.</p>
+    <p>If you are a consumer resident in the European Union, you also have the right to use the EU Online Dispute Resolution platform at <a href="https://ec.europa.eu/consumers/odr" target="_blank">ec.europa.eu/consumers/odr</a>.</p>
+  </section>
+
+  <section id="s13">
+    <div class="section-header"><div class="section-num">13</div><h2>Changes to Terms</h2></div>
+    <p>We may modify these Terms at any time. When we make material changes, we will update the "Last updated" date at the top of this page and notify you within the App or by email where appropriate.</p>
+    <p>Your continued use of ChallengeTies after changes take effect constitutes acceptance of the revised Terms. If you do not agree, you must stop using the App.</p>
+  </section>
+
+  <section id="s14">
+    <div class="section-header"><div class="section-num">14</div><h2>Contact</h2></div>
+    <p>For any questions or concerns regarding these Terms:</p>
+    <ul class="legal-list">
+      <li>Email: <a href="mailto:support@challengeties.app">support@challengeties.app</a></li>
+      <li>Website: <a href="https://challengeties.app">challengeties.app</a></li>
+      <li>Publisher: Maxime Cortes — independent developer</li>
+    </ul>
+    <p>We aim to respond to all inquiries within 5 business days.</p>
+  </section>
+
+  <a href="#top" class="back-top">↑ Back to top</a>
+
+</main>
+
+<footer>
+  <div class="footer-logo">ChallengeTies</div>
+  <p>
+    &copy; 2026 Maxime Cortes. All rights reserved. &nbsp;·&nbsp;
+    <a href="/privacy">Privacy Policy</a> &nbsp;·&nbsp;
+    <a href="/terms">Terms of Use</a> &nbsp;·&nbsp;
+    <a href="mailto:support@challengeties.app">Contact</a>
+  </p>
+</footer>
+
 </body>
 </html>
