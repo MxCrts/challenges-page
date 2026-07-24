@@ -1,0 +1,19 @@
+{
+  "name": "ChallengeTies",
+  "short_name": "ChallengeTies",
+  "description": "Habit tracker with a real accountability partner.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B1120",
+  "theme_color": "#0B1120",
+  "icons": [
+    { "src": "/assets/favicon-32.png", "sizes": "32x32", "type": "image/png" },
+    { "src": "/assets/logo-180.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/assets/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "prefer_related_applications": true,
+  "related_applications": [
+    { "platform": "play", "id": "com.mxcrts.ChallengeTies", "url": "https://play.google.com/store/apps/details?id=com.mxcrts.ChallengeTies" },
+    { "platform": "itunes", "url": "https://apps.apple.com/app/id6751504640" }
+  ]
+}
