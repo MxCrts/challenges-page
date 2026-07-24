@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0B1120">
+
+<!-- Primary SEO -->
+<title>ChallengeTies — Tracker d'habitudes avec un vrai partenaire de responsabilité</title>
+<meta name="description" content="ChallengeTies est le tracker d'habitudes où ton partenaire de responsabilité est un vrai humain, pas un algorithme. Crée des habitudes, suis tes séries et atteins tes objectifs en duo. Gratuit, sans pub.">
+<link rel="canonical" href="https://challengeties.app/fr/">
+<meta name="author" content="ChallengeTies">
+<meta name="robots" content="index,follow,max-image-preview:large">
+
+<!-- Hreflang -->
+<link rel="alternate" hreflang="en" href="https://challengeties.app/">
+<link rel="alternate" hreflang="fr" href="https://challengeties.app/fr/">
+<link rel="alternate" hreflang="x-default" href="https://challengeties.app/">
+
+<!-- Smart App Banners -->
+<meta name="apple-itunes-app" content="app-id=6751504640">
+<meta name="google-play-app" content="app-id=com.mxcrts.ChallengeTies">
+
+<!-- Icons / manifest -->
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/logo.webp" type="image/webp">
+<link rel="apple-touch-icon" href="/assets/logo-180.png">
+<link rel="manifest" href="/manifest.webmanifest">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ChallengeTies">
+<meta property="og:title" content="ChallengeTies — Les habitudes tiennent avec un vrai humain">
+<meta property="og:description" content="95% de chances d'atteindre ton objectif avec un vrai partenaire de responsabilité — contre moins de 10% seul. Pas un coach IA. Pas un algorithme. Une vraie personne.">
+<meta property="og:url" content="https://challengeties.app/fr/">
+<meta property="og:locale" content="fr">
+<meta property="og:locale:alternate" content="en">
+<meta property="og:image" content="https://challengeties.app/assets/og-image-fr.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ChallengeTies — Seul tu commences. Ensemble tu tiens.">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ChallengeTies — Les habitudes tiennent avec un vrai humain">
+<meta name="twitter:description" content="95% de chances d'atteindre ton objectif avec un vrai partenaire — contre moins de 10% seul. Gratuit, sans pub.">
+<meta name="twitter:image" content="https://challengeties.app/assets/og-image-fr.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "ChallengeTies",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "iOS, Android",
+  "url": "https://challengeties.app/fr/",
+  "description": "Tracker d'habitudes avec un vrai partenaire de responsabilité. Crée des habitudes, suis tes séries et atteins tes objectifs en duo avec une vraie personne, pas un algorithme.",
+  "inLanguage": ["fr","en","es","de","pt","it","ar","hi","zh","ja","ko","ru","nl"],
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+  "author": { "@type": "Person", "name": "Maxime Cortes" },
+  "downloadUrl": [
+    "https://apps.apple.com/app/id6751504640",
+    "https://play.google.com/store/apps/details?id=com.mxcrts.ChallengeTies"
+  ]
+}
+</script>
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --orange:#F97316;--orange2:#FB923C;--amber:#FBBF24;
+  --orange-glow:rgba(249,115,22,0.18);
+  --navy:#0B1120;--navy2:#0F1729;--navy3:#16203a;
+  --white:#F8FAFC;--muted:rgba(248,250,252,0.62);--dim:rgba(248,250,252,0.40);
+  --border:rgba(248,250,252,0.09);
+  --green:#34D399;--red:#F87171;
+  --maxw:1160px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Comfortaa',system-ui,sans-serif;background:var(--navy);color:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.55}
+a{color:inherit}
+img{max-width:100%;display:block}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left{opacity:0;transform:translateX(-38px);transition:opacity .7s ease,transform .7s ease}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-right{opacity:0;transform:translateX(38px);transition:opacity .7s ease,transform .7s ease}
+.reveal-right.visible{opacity:1;transform:translateX(0)}
+.reveal-scale{opacity:0;transform:scale(.92);transition:opacity .6s ease,transform .6s ease}
+.reveal-scale.visible{opacity:1;transform:scale(1)}
+.delay-1{transition-delay:.1s}.delay-2{transition-delay:.2s}.delay-3{transition-delay:.3s}.delay-4{transition-delay:.4s}
+@media (prefers-reduced-motion: reduce){
+  .reveal,.reveal-left,.reveal-right,.reveal-scale{opacity:1!important;transform:none!important;transition:none}
+  .particle,.marquee-track{animation:none!important}
+  html{scroll-behavior:auto}
+}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
+  padding:15px clamp(16px,4vw,40px);background:rgba(11,17,32,.78);backdrop-filter:blur(22px);
+  -webkit-backdrop-filter:blur(22px);border-bottom:1px solid var(--border);transition:padding .3s ease}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo img{width:34px;height:34px;border-radius:9px;box-shadow:0 0 16px rgba(249,115,22,.35)}
+.nav-logo-text{font-weight:700;font-size:17px;letter-spacing:-.02em}
+.nav-logo-text span{color:var(--orange)}
+.nav-right{display:flex;align-items:center;gap:14px}
+.lang-switch{display:flex;gap:2px;font-size:13px;font-weight:600}
+.lang-switch a{padding:5px 9px;border-radius:8px;text-decoration:none;color:var(--muted);transition:.2s}
+.lang-switch a.active{background:rgba(249,115,22,.14);color:var(--orange2)}
+.lang-switch a:hover{color:var(--white)}
+.nav-cta{background:var(--orange);color:#fff;font-family:inherit;font-size:14px;font-weight:600;
+  padding:10px 20px;border-radius:100px;text-decoration:none;transition:.2s ease}
+.nav-cta:hover{background:var(--orange2);transform:translateY(-1px);box-shadow:0 8px 24px rgba(249,115,22,.38)}
+.section{max-width:var(--maxw);margin:0 auto;padding:clamp(64px,9vw,120px) clamp(20px,5vw,40px);position:relative}
+.section-label{display:inline-block;color:var(--orange2);font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px}
+.section-title{font-size:clamp(30px,5.5vw,52px);font-weight:700;line-height:1.08;letter-spacing:-.03em;margin-bottom:18px}
+.section-sub{font-size:clamp(15px,2.2vw,19px);color:var(--muted);max-width:640px;margin-bottom:52px}
+.divider{max-width:var(--maxw);margin:0 auto;height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent)}
+.hero{min-height:100vh;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;
+  max-width:var(--maxw);margin:0 auto;padding:120px clamp(20px,5vw,40px) 70px;position:relative}
+.hero-bg{position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(ellipse 70% 55% at 25% 0%,var(--orange-glow) 0%,transparent 60%),
+            radial-gradient(ellipse 45% 45% at 100% 90%,rgba(249,115,22,.06) 0%,transparent 55%)}
+.hero-grid{position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);
+  background-size:58px 58px;mask-image:radial-gradient(ellipse 75% 75% at 40% 40%,#000 25%,transparent 78%);
+  -webkit-mask-image:radial-gradient(ellipse 75% 75% at 40% 40%,#000 25%,transparent 78%)}
+.hero-particles{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.particle{position:absolute;border-radius:50%;background:var(--orange);opacity:0;animation:float linear infinite}
+@keyframes float{0%{opacity:0;transform:translateY(100vh) scale(0)}10%{opacity:.4}90%{opacity:.4}100%{opacity:0;transform:translateY(-20vh) scale(1.4)}}
+.hero-content{position:relative;z-index:2}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(249,115,22,.12);border:1px solid rgba(249,115,22,.25);
+  color:var(--orange2);font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:7px 15px;border-radius:100px;margin-bottom:26px}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--orange);animation:pulse 2s ease infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+h1{font-size:clamp(38px,6.4vw,68px);font-weight:700;line-height:1.02;letter-spacing:-.035em;margin-bottom:22px}
+h1 .line-orange{display:block;color:var(--orange);
+  background:linear-gradient(90deg,#F97316,#FB923C,#FBBF24,#F97316);background-size:200%;
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 5s linear infinite}
+@keyframes shimmer{0%{background-position:0}100%{background-position:200%}}
+.hero-sub{font-size:clamp(15px,2.2vw,18px);color:var(--muted);max-width:540px;margin-bottom:26px}
+.hook{display:flex;align-items:stretch;gap:0;background:var(--navy2);border:1px solid var(--border);border-radius:18px;
+  overflow:hidden;margin-bottom:30px;max-width:520px}
+.hook-cell{flex:1;padding:18px 20px;text-align:center}
+.hook-cell.win{background:linear-gradient(135deg,rgba(249,115,22,.16),rgba(249,115,22,.04))}
+.hook-num{font-size:clamp(30px,6vw,42px);font-weight:700;line-height:1;letter-spacing:-.03em}
+.hook-cell.win .hook-num{color:var(--orange)}
+.hook-cell.lose .hook-num{color:var(--dim)}
+.hook-cap{font-size:12px;color:var(--muted);margin-top:7px;line-height:1.35}
+.hook-vs{align-self:center;padding:0 4px;font-size:12px;font-weight:600;color:var(--dim)}
+.hook-src{font-size:11px;color:var(--dim);margin:-18px 0 30px;max-width:520px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+.store-btn{display:inline-flex;align-items:center;gap:11px;background:var(--white);color:#0B1120;
+  padding:11px 20px 11px 17px;border-radius:14px;text-decoration:none;transition:.2s ease;border:1px solid transparent}
+.store-btn.alt{background:transparent;color:var(--white);border-color:var(--border)}
+.store-btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.store-btn svg{width:26px;height:26px;flex-shrink:0}
+.store-btn .col{display:flex;flex-direction:column;line-height:1.1;text-align:left}
+.store-btn .s1{font-size:10px;opacity:.75;letter-spacing:.02em}
+.store-btn .s2{font-size:16px;font-weight:700}
+.hero-trust{display:flex;gap:18px;flex-wrap:wrap;color:var(--dim);font-size:13px}
+.hero-trust b{color:var(--muted);font-weight:600}
+.hero-visual{position:relative;z-index:1;display:flex;justify-content:center;align-items:center}
+.phone{position:relative;filter:drop-shadow(0 30px 60px rgba(0,0,0,.55));animation:bob 6s ease-in-out infinite}
+.phone img{width:min(300px,74vw);height:auto;border-radius:34px}
+.phone::after{content:"";position:absolute;inset:-8% -12%;z-index:-1;
+  background:radial-gradient(ellipse at center,var(--orange-glow),transparent 65%);filter:blur(10px)}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.marquee-wrap{overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:18px 0;background:var(--navy2)}
+.marquee-track{display:flex;gap:14px;width:max-content;animation:scroll 34s linear infinite}
+.marquee-item{display:flex;align-items:center;gap:8px;white-space:nowrap;color:var(--muted);font-size:15px;font-weight:500;
+  padding:8px 18px;border:1px solid var(--border);border-radius:100px}
+.marquee-item .ico{font-size:17px}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.proof{text-align:center}
+.proof .big-stat{font-size:clamp(56px,13vw,120px);font-weight:700;line-height:1;letter-spacing:-.04em;color:var(--orange);
+  background:linear-gradient(90deg,#F97316,#FBBF24);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.proof-line{font-size:clamp(20px,3.4vw,30px);font-weight:600;margin:14px auto 8px;max-width:800px;line-height:1.25}
+.proof-src{color:var(--dim);font-size:13px;margin-bottom:44px}
+.proof-tags{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:760px;margin:0 auto 30px}
+.proof-tag{padding:9px 18px;border:1px solid var(--border);border-radius:100px;color:var(--muted);font-size:14px}
+.proof-tag b{color:var(--white);font-weight:600}
+.proof-emph{font-size:clamp(18px,2.8vw,24px);font-weight:600;color:var(--orange2)}
+.pvs-wrap{display:grid;grid-template-columns:1fr auto 1fr;gap:22px;align-items:center;margin-top:8px}
+.pvs-side{background:var(--navy2);border:1px solid var(--border);border-radius:20px;padding:28px}
+.pvs-side.good{border-color:rgba(249,115,22,.3);background:linear-gradient(160deg,rgba(249,115,22,.09),var(--navy2))}
+.pvs-label{font-size:13px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin-bottom:18px}
+.pvs-label.bad{color:var(--dim)}.pvs-label.good{color:var(--orange2)}
+.pvs-item{display:flex;align-items:flex-start;gap:11px;padding:10px 0;color:var(--muted);font-size:15px;border-top:1px solid var(--border)}
+.pvs-item:first-of-type{border-top:none}
+.pvs-item .ico{flex-shrink:0}
+.pvs-side.good .pvs-item{color:var(--white)}
+.pvs-vs{width:46px;height:46px;border-radius:50%;background:var(--navy3);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--muted)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.step{background:var(--navy2);border:1px solid var(--border);border-radius:22px;padding:26px;position:relative;overflow:hidden}
+.step-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.step-num{width:34px;height:34px;border-radius:10px;background:rgba(249,115,22,.14);color:var(--orange);
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px}
+.step-ico{font-size:26px}
+.step-title{font-size:19px;font-weight:600;margin-bottom:8px}
+.step-desc{color:var(--muted);font-size:14.5px}
+.step-shot{margin-top:20px;border-radius:16px;overflow:hidden;border:1px solid var(--border);
+  -webkit-mask-image:linear-gradient(#000 72%,transparent);mask-image:linear-gradient(#000 72%,transparent)}
+.step-shot img{width:100%}
+.features-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
+.feat{background:var(--navy2);border:1px solid var(--border);border-radius:22px;padding:28px;grid-column:span 2}
+.feat.wide{grid-column:span 3}
+.feat.tall{grid-column:span 3}
+.feat-ico{font-size:30px;display:inline-block;margin-bottom:14px}
+.feat-title{font-size:20px;font-weight:600;margin-bottom:9px}
+.feat-desc{color:var(--muted);font-size:14.5px}
+.feat-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.feat-tag{font-size:12.5px;color:var(--orange2);background:rgba(249,115,22,.1);border:1px solid rgba(249,115,22,.2);padding:6px 12px;border-radius:100px}
+.feat-shot{margin-top:20px;border-radius:14px;overflow:hidden;border:1px solid var(--border);
+  -webkit-mask-image:linear-gradient(#000 78%,transparent);mask-image:linear-gradient(#000 78%,transparent)}
+.feat.split{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}
+.feat.split .feat-shot{margin-top:0;-webkit-mask-image:none;mask-image:none}
+.counters{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:40px}
+.counter-box{background:var(--navy2);border:1px solid var(--border);border-radius:18px;padding:26px;text-align:center}
+.counter-num{font-size:clamp(30px,5vw,42px);font-weight:700;color:var(--orange);letter-spacing:-.02em}
+.counter-label{color:var(--muted);font-size:13.5px;margin-top:6px}
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.review{background:var(--navy2);border:1px solid var(--border);border-radius:20px;padding:24px;display:flex;flex-direction:column}
+.stars{color:var(--amber);font-size:16px;letter-spacing:2px;margin-bottom:12px}
+.review-text{color:var(--muted);font-size:14.5px;line-height:1.6;flex:1}
+.reviewer{display:flex;align-items:center;gap:11px;margin-top:18px}
+.r-avatar{width:38px;height:38px;border-radius:50%;background:var(--navy3);display:flex;align-items:center;justify-content:center;font-size:18px}
+.r-name{font-weight:600;font-size:14px}
+.r-src{color:var(--dim);font-size:12px}
+.story{background:linear-gradient(160deg,var(--navy2),var(--navy));border:1px solid var(--border);border-radius:28px;
+  padding:clamp(30px,5vw,60px);display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;overflow:hidden;position:relative}
+.story-badge{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--orange2);margin-bottom:20px}
+.story h2{font-size:clamp(26px,4.4vw,42px);font-weight:700;line-height:1.1;letter-spacing:-.03em;margin-bottom:20px}
+.story p{color:var(--muted);font-size:16px;margin-bottom:16px}
+.story p b{color:var(--white);font-weight:600}
+.story .sig{color:var(--orange2);font-weight:600;font-size:15px}
+.story-stat{text-align:center;background:var(--navy);border:1px solid var(--border);border-radius:22px;padding:34px 20px}
+.story-stat .n{font-size:clamp(56px,11vw,88px);font-weight:700;color:var(--orange);line-height:1;letter-spacing:-.04em}
+.story-stat .l{color:var(--muted);font-size:15px;margin-top:8px}
+.story-stat .sub{color:var(--dim);font-size:13px;margin-top:16px;border-top:1px solid var(--border);padding-top:16px}
+.free-strip{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,40px)}
+.free-inner{background:linear-gradient(135deg,rgba(52,211,153,.08),var(--navy2));border:1px solid rgba(52,211,153,.2);
+  border-radius:22px;padding:30px clamp(22px,4vw,44px);display:flex;flex-wrap:wrap;align-items:center;gap:16px 30px;justify-content:space-between}
+.free-inner h3{font-size:clamp(20px,3vw,26px);font-weight:700}
+.free-inner h3 span{color:var(--green)}
+.free-inner p{color:var(--muted);font-size:14.5px;max-width:600px;margin-top:6px}
+.cta-section{position:relative;overflow:hidden;text-align:center;padding:clamp(70px,10vw,120px) clamp(20px,5vw,40px)}
+.cta-bg{position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(ellipse 60% 60% at 50% 0%,var(--orange-glow),transparent 60%)}
+.cta-content{position:relative;z-index:1;max-width:760px;margin:0 auto}
+.cta-title{font-size:clamp(32px,6vw,58px);font-weight:700;line-height:1.05;letter-spacing:-.035em;margin-bottom:16px}
+.cta-title span{color:var(--orange)}
+.cta-sub{color:var(--muted);font-size:clamp(15px,2.2vw,18px);margin-bottom:34px;max-width:580px;margin-left:auto;margin-right:auto}
+.store-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+footer{border-top:1px solid var(--border);padding:44px clamp(20px,5vw,40px);max-width:var(--maxw);margin:0 auto;
+  display:flex;flex-wrap:wrap;gap:22px;align-items:center;justify-content:space-between}
+.footer-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.footer-logo img{width:30px;height:30px;border-radius:8px}
+.footer-logo-text{font-weight:700;font-size:15px}
+.footer-logo-text span{color:var(--orange)}
+.footer-links{display:flex;flex-wrap:wrap;gap:8px 22px}
+.footer-links a{color:var(--muted);text-decoration:none;font-size:14px;transition:.2s}
+.footer-links a:hover{color:var(--orange2)}
+.footer-copy{color:var(--dim);font-size:13px;width:100%;text-align:center;padding-top:8px}
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;min-height:auto;padding-top:104px;text-align:center}
+  .hero-content{order:2}.hero-visual{order:1;margin-bottom:8px}
+  .badge,.hook,.hook-src{margin-left:auto;margin-right:auto}
+  .hero-sub{margin-left:auto;margin-right:auto}
+  .hero-btns,.hero-trust{justify-content:center}
+  .steps{grid-template-columns:1fr}
+  .features-grid{grid-template-columns:1fr}
+  .feat,.feat.wide,.feat.tall{grid-column:span 1}
+  .feat.split{grid-template-columns:1fr}
+  .reviews{grid-template-columns:1fr}
+  .counters{grid-template-columns:1fr}
+  .story{grid-template-columns:1fr}
+  .pvs-wrap{grid-template-columns:1fr}
+  .pvs-vs{margin:0 auto;transform:rotate(90deg)}
+}
+@media (max-width:520px){
+  .nav-cta{padding:9px 15px;font-size:13px}
+  .hook-cell{padding:14px 12px}
+  .store-btn{flex:1;justify-content:center}
+}
+@media (max-width:440px){
+  .nav-logo-text{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="/fr/" aria-label="Accueil ChallengeTies">
+    <img src="/assets/logo.webp" width="34" height="34" alt="Logo ChallengeTies">
+    <span class="nav-logo-text">Challenge<span>Ties</span></span>
+  </a>
+  <div class="nav-right">
+    <div class="lang-switch" aria-label="Langue">
+      <a href="/" hreflang="en">EN</a>
+      <a href="/fr/" class="active" hreflang="fr">FR</a>
+    </div>
+    <a class="nav-cta" href="https://onelink.to/qq7632">Télécharger</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-particles" id="particles"></div>
+
+  <div class="hero-content">
+    <div class="badge"><span class="badge-dot"></span> Pas un algorithme — une vraie personne</div>
+    <h1>Les habitudes tiennent<span class="line-orange">avec un vrai humain.</span></h1>
+    <p class="hero-sub">ChallengeTies est le tracker d'habitudes avec un vrai partenaire de responsabilité — parce qu'on tient parole quand quelqu'un compte sur nous.</p>
+
+    <div class="hook">
+      <div class="hook-cell win">
+        <div class="hook-num">95%</div>
+        <div class="hook-cap">atteins ton objectif<br>avec un partenaire</div>
+      </div>
+      <div class="hook-vs">vs</div>
+      <div class="hook-cell lose">
+        <div class="hook-num">&lt;10%</div>
+        <div class="hook-cap">l'atteindre<br>seul</div>
+      </div>
+    </div>
+    <p class="hook-src">Source : American Society of Training and Development (ASTD).</p>
+
+    <div class="hero-btns">
+      <a class="store-btn" href="https://apps.apple.com/app/id6751504640" aria-label="Télécharger sur l'App Store">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        <span class="col"><span class="s1">Télécharger sur l'</span><span class="s2">App Store</span></span>
+      </a>
+      <a class="store-btn alt" href="https://play.google.com/store/apps/details?id=com.mxcrts.ChallengeTies" aria-label="Disponible sur Google Play">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.18 23.76c.3.17.63.24.97.21l13.2-7.61-2.83-2.83-11.34 10.23zM.49 1.51C.18 1.84 0 2.35 0 3v18c0 .65.18 1.16.49 1.49l.08.08 10.08-10.08v-.24L.57 1.43.49 1.51zM20.93 10.37l-2.83-1.63-3.18 3.18 3.18 3.18 2.85-1.64c.81-.47.81-1.23-.02-1.69zM4.15.24L17.35 7.85l-2.83 2.83L3.18.45C3.5.17 3.86.07 4.15.24z"/></svg>
+        <span class="col"><span class="s1">Disponible sur</span><span class="s2">Google Play</span></span>
+      </a>
+    </div>
+    <div class="hero-trust"><span><b>Gratuit</b> à vie</span><span><b>Sans pub</b>, jamais</span><span><b>13</b> langues</span></div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="phone"><img src="/assets/screens/fr-home.webp" width="680" height="1902" alt="Écran d'accueil ChallengeTies avec le check-in quotidien" fetchpriority="high"></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-track">
+    <div class="marquee-item"><span class="ico">🏃</span> Fitness</div>
+    <div class="marquee-item"><span class="ico">🧘</span> Pleine conscience</div>
+    <div class="marquee-item"><span class="ico">📚</span> Lecture</div>
+    <div class="marquee-item"><span class="ico">💤</span> Sommeil</div>
+    <div class="marquee-item"><span class="ico">🥗</span> Nutrition</div>
+    <div class="marquee-item"><span class="ico">⚡</span> Productivité</div>
+    <div class="marquee-item"><span class="ico">🚿</span> Douches froides</div>
+    <div class="marquee-item"><span class="ico">🎨</span> Créativité</div>
+    <div class="marquee-item"><span class="ico">💰</span> Finance</div>
+    <div class="marquee-item"><span class="ico">🎯</span> Discipline</div>
+    <div class="marquee-item"><span class="ico">🏃</span> Fitness</div>
+    <div class="marquee-item"><span class="ico">🧘</span> Pleine conscience</div>
+    <div class="marquee-item"><span class="ico">📚</span> Lecture</div>
+    <div class="marquee-item"><span class="ico">💤</span> Sommeil</div>
+    <div class="marquee-item"><span class="ico">🥗</span> Nutrition</div>
+    <div class="marquee-item"><span class="ico">⚡</span> Productivité</div>
+    <div class="marquee-item"><span class="ico">🚿</span> Douches froides</div>
+    <div class="marquee-item"><span class="ico">🎨</span> Créativité</div>
+    <div class="marquee-item"><span class="ico">💰</span> Finance</div>
+    <div class="marquee-item"><span class="ico">🎯</span> Discipline</div>
+  </div>
+</div>
+
+<!-- PROOF -->
+<section class="section proof">
+  <div class="section-label reveal">Science comportementale</div>
+  <div class="big-stat reveal">95%</div>
+  <p class="proof-line reveal">de chances d'atteindre ton objectif avec un partenaire de responsabilité — contre <b>moins de 10% seul.</b></p>
+  <p class="proof-src reveal">American Society of Training and Development (ASTD). ChallengeTies est né de cette seule idée.</p>
+  <div class="proof-tags reveal delay-1">
+    <span class="proof-tag">Pas la <b>volonté</b></span>
+    <span class="proof-tag">Pas les <b>séries</b></span>
+    <span class="proof-tag">Pas la <b>gamification</b></span>
+    <span class="proof-tag">La <b>responsabilité sociale</b></span>
+  </div>
+  <p class="proof-emph reveal delay-2">Une vraie personne qui sait si tu t'es présenté aujourd'hui.<br>Pas un coach IA. Pas un algorithme.</p>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROBLEM VS SOLUTION -->
+<section class="section">
+  <div class="section-label reveal">Le vrai problème</div>
+  <h2 class="section-title reveal">Les algorithmes s'en fichent.<br>Les humains, non.</h2>
+  <p class="section-sub reveal">Toutes les autres apps te rendent responsable devant un compteur. Nous, devant une personne.</p>
+  <div class="pvs-wrap">
+    <div class="pvs-side reveal-left">
+      <div class="pvs-label bad">Les autres apps d'habitudes</div>
+      <div class="pvs-item"><span class="ico">✕</span> Toi vs ton compteur de série</div>
+      <div class="pvs-item"><span class="ico">✕</span> Un jour manqué, culpabilité, abandon</div>
+      <div class="pvs-item"><span class="ico">✕</span> Des badges dont personne ne se soucie</div>
+      <div class="pvs-item"><span class="ico">✕</span> Seul dans ta discipline</div>
+    </div>
+    <div class="pvs-vs">VS</div>
+    <div class="pvs-side good reveal-right">
+      <div class="pvs-label good">ChallengeTies</div>
+      <div class="pvs-item"><span class="ico">✓</span> Toi + un vrai partenaire humain</div>
+      <div class="pvs-item"><span class="ico">✓</span> Il voit quand tu sautes un jour</div>
+      <div class="pvs-item"><span class="ico">✓</span> Une vraie responsabilité sociale</div>
+      <div class="pvs-item"><span class="ico">✓</span> Ensemble, vous tenez vraiment</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- HOW IT WORKS -->
+<section class="section">
+  <div class="section-label reveal">Comment ça marche</div>
+  <h2 class="section-title reveal">Trois étapes.<br>Un vrai partenaire.</h2>
+  <p class="section-sub reveal">Aucune configuration compliquée. Juste toi, un défi, et quelqu'un qui compte sur toi.</p>
+  <div class="steps">
+    <div class="step reveal delay-1">
+      <div class="step-head"><span class="step-num">1</span><span class="step-ico">🎯</span></div>
+      <div class="step-title">Choisis ton défi</div>
+      <p class="step-desc">Parcours plus de 100 défis — fitness, mental, apprentissage, créativité et plus — ou crée le tien de A à Z.</p>
+      <div class="step-shot"><img src="/assets/screens/fr-journey.webp" loading="lazy" width="680" height="1467" alt="Choisis un défi pour commencer"></div>
+    </div>
+    <div class="step reveal delay-2">
+      <div class="step-head"><span class="step-num">2</span><span class="step-ico">🤝</span></div>
+      <div class="step-title">Trouve ton partenaire</div>
+      <p class="step-desc">Invite un ami ou ton/ta partenaire via un lien direct — ou fais-toi matcher avec un inconnu motivé. Mode solo aussi disponible.</p>
+      <div class="step-shot"><img src="/assets/screens/fr-duo.webp" loading="lazy" width="680" height="1467" alt="Historique partagé avec ton partenaire de responsabilité"></div>
+    </div>
+    <div class="step reveal delay-3">
+      <div class="step-head"><span class="step-num">3</span><span class="step-ico">🔥</span></div>
+      <div class="step-title">Présentez-vous ensemble</div>
+      <p class="step-desc">Check-in quotidien. Vous voyez vos séries respectives. Impossible de disparaître sans que ton partenaire le remarque. C'est tout le mécanisme.</p>
+      <div class="step-shot"><img src="/assets/screens/fr-mark.webp" loading="lazy" width="680" height="1440" alt="Marque ton défi comme fait aujourd'hui"></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FEATURES -->
+<section class="section">
+  <div class="section-label reveal">Fonctionnalités</div>
+  <h2 class="section-title reveal">Pensé pour celles et ceux<br>qui ont déjà abandonné.</h2>
+  <p class="section-sub reveal">Tout est conçu autour d'une vérité : les humains rendent les humains responsables.</p>
+  <div class="features-grid">
+
+    <div class="feat split wide reveal">
+      <div>
+        <span class="feat-ico">👥</span>
+        <div class="feat-title">Mode Duo</div>
+        <p class="feat-desc">Invite qui tu veux via un lien direct et suivez le même défi ensemble, chaque jour. Vois la progression de ton partenaire en temps réel, discutez dans le défi partagé, et consulte votre historique complet.</p>
+        <div class="feat-tags">
+          <span class="feat-tag">Temps réel</span>
+          <span class="feat-tag">Séries partagées</span>
+          <span class="feat-tag">Chat intégré</span>
+          <span class="feat-tag">Motive ton partenaire</span>
+        </div>
+      </div>
+      <div class="feat-shot"><img src="/assets/screens/fr-duo.webp" loading="lazy" width="680" height="1467" alt="Écran d'historique partagé du duo"></div>
+    </div>
+
+    <div class="feat split tall reveal delay-1">
+      <div>
+        <span class="feat-ico">🛡️</span>
+        <div class="feat-title">Score de fiabilité</div>
+        <p class="feat-desc">Un chiffre qui dit la vérité : es-tu quelqu'un qui tient parole ? Ton taux de parole tenue sur 30 jours, sur 100, visible par ton partenaire. Il s'adapte au rythme que tu choisis.</p>
+        <div class="feat-tags">
+          <span class="feat-tag">Score /100</span>
+          <span class="feat-tag">Visible par les partenaires</span>
+          <span class="feat-tag">Bilan hebdo</span>
+        </div>
+      </div>
+      <div class="feat-shot"><img src="/assets/screens/fr-reliability.webp" loading="lazy" width="680" height="1467" alt="Écran du bilan de fiabilité hebdomadaire"></div>
+    </div>
+
+    <div class="feat reveal delay-2">
+      <span class="feat-ico">🧲</span>
+      <div class="feat-title">Matching intelligent</div>
+      <p class="feat-desc">Pas d'amis dispo ? ChallengeTies trouve ton partenaire idéal — même défi, même objectif de vie, même catégorie, ouvert au duo. Le meilleur score de compatibilité gagne.</p>
+    </div>
+    <div class="feat reveal delay-3">
+      <span class="feat-ico">🗂️</span>
+      <div class="feat-title">100+ défis</div>
+      <p class="feat-desc">Dix catégories, d'une habitude de 5 minutes à une transformation d'un an. De 7 à 365 jours. Crée les tiens et partage-les.</p>
+    </div>
+    <div class="feat reveal delay-2">
+      <span class="feat-ico">🏆</span>
+      <div class="feat-title">Séries &amp; trophées</div>
+      <p class="feat-desc">Gagne des trophées, protège tes séries, grimpe dans les classements mondiaux, nationaux et régionaux, et réagis aux réussites du jour dans le fil Exploits.</p>
+    </div>
+    <div class="feat reveal delay-3">
+      <span class="feat-ico">🌍</span>
+      <div class="feat-title">13 langues</div>
+      <p class="feat-desc">Anglais, français, espagnol, allemand, portugais, italien, arabe, hindi, chinois, japonais, coréen, russe, néerlandais.</p>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- REVIEWS -->
+<section class="section">
+  <div class="section-label reveal">Avis</div>
+  <h2 class="section-title reveal">Ce qu'on en dit.</h2>
+  <p class="section-sub reveal">De vrais utilisateurs. De vrais stores. De vrais mots.</p>
+  <div class="counters">
+    <div class="counter-box reveal delay-1"><div class="counter-num">100+</div><div class="counter-label">Défis disponibles</div></div>
+    <div class="counter-box reveal delay-2"><div class="counter-num">13</div><div class="counter-label">Langues supportées</div></div>
+    <div class="counter-box reveal delay-3"><div class="counter-num">Gratuit</div><div class="counter-label">À télécharger, pour toujours</div></div>
+  </div>
+  <div class="reviews">
+    <div class="review reveal delay-1">
+      <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+      <p class="review-text">"Une application tout simplement géniale ! Challengeties est ultra motivante, ludique et vraiment bien pensée. Les défis sont variés, accessibles et donnent envie de se dépasser jour après jour sans pression mais avec beaucoup de plaisir. L'interface est claire, intuitive et agréable à utiliser. C'est exactement le genre d'application qui te booste et t'aide à avancer vers tes objectifs. Un vrai coup de cœur ! 💪✨"</p>
+      <div class="reviewer"><div class="r-avatar">🧑</div><div><div class="r-name">lucibo</div><div class="r-src">App Store</div></div></div>
+    </div>
+    <div class="review reveal delay-2">
+      <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+      <p class="review-text">"Great app for motivation. I love the idea of daily challenges and the interface is user-friendly. Great work. Looking forward to seeing the next features!"</p>
+      <div class="reviewer"><div class="r-avatar">👩</div><div><div class="r-name">Marie Alcantara</div><div class="r-src">Google Play</div></div></div>
+    </div>
+    <div class="review reveal delay-3">
+      <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+      <p class="review-text">"I am satisfied with the application, I highly recommend it, simple and effective, everything you need to keep going, looking forward to the next update."</p>
+      <div class="reviewer"><div class="r-avatar">🧔</div><div><div class="r-name">noah g</div><div class="r-src">Google Play</div></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- STORY -->
+<section class="section">
+  <div class="story reveal-scale">
+    <div>
+      <div class="story-badge">🚐 L'histoire</div>
+      <h2>Construite dans un van.</h2>
+      <p>ChallengeTies a été créée par un fondateur solo vivant dans un van au Portugal, qui échouait aux mêmes objectifs chaque année — <b>jusqu'à ce qu'il défie sa compagne.</b></p>
+      <p>107 jours de série. Toujours en cours.</p>
+      <p class="sig">« Cette app, c'est ce qu'on aurait voulu trouver. »</p>
+    </div>
+    <div class="story-stat">
+      <div class="n">107</div>
+      <div class="l">jours de série — ensemble</div>
+      <div class="sub">Toujours en cours.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FREE STRIP -->
+<div class="free-strip reveal">
+  <div class="free-inner">
+    <div>
+      <h3>Gratuit — <span>sans pub, jamais.</span></h3>
+      <p>Toutes les fonctions essentielles dès le premier jour. Sans carte bancaire. Aucun paywall pour défier un ami. Le Premium optionnel débloque ton historique complet, des stats avancées, un journal global et des icônes exclusives.</p>
+    </div>
+    <a class="nav-cta" href="https://onelink.to/qq7632">Obtenir l'app</a>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-bg"></div>
+  <div class="cta-content reveal">
+    <h2 class="cta-title">Seul tu commences.<br><span>Ensemble tu tiens.</span></h2>
+    <p class="cta-sub">Télécharge gratuitement. Lance ton premier défi en 60 secondes. Trouve ton partenaire de responsabilité dès aujourd'hui.</p>
+    <div class="store-row">
+      <a class="store-btn" href="https://apps.apple.com/app/id6751504640" aria-label="Télécharger sur l'App Store">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        <span class="col"><span class="s1">Télécharger sur l'</span><span class="s2">App Store</span></span>
+      </a>
+      <a class="store-btn alt" href="https://play.google.com/store/apps/details?id=com.mxcrts.ChallengeTies" aria-label="Disponible sur Google Play">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.18 23.76c.3.17.63.24.97.21l13.2-7.61-2.83-2.83-11.34 10.23zM.49 1.51C.18 1.84 0 2.35 0 3v18c0 .65.18 1.16.49 1.49l.08.08 10.08-10.08v-.24L.57 1.43.49 1.51zM20.93 10.37l-2.83-1.63-3.18 3.18 3.18 3.18 2.85-1.64c.81-.47.81-1.23-.02-1.69zM4.15.24L17.35 7.85l-2.83 2.83L3.18.45C3.5.17 3.86.07 4.15.24z"/></svg>
+        <span class="col"><span class="s1">Disponible sur</span><span class="s2">Google Play</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a class="footer-logo" href="/fr/">
+    <img src="/assets/logo.webp" width="30" height="30" alt="Logo ChallengeTies">
+    <span class="footer-logo-text">Challenge<span>Ties</span></span>
+  </a>
+  <div class="footer-links">
+    <a href="/">English</a>
+    <a href="mailto:support@challengeties.app">Contact</a>
+    <a href="/privacy-policy.html">Confidentialité</a>
+    <a href="/terms.html">CGU</a>
+    <a href="/delete-account.html">Supprimer mon compte</a>
+  </div>
+  <div class="footer-copy">© 2026 ChallengeTies · Construite dans un van 🚐</div>
+</footer>
+
+<script>
+(function(){
+  var c=document.getElementById('particles');
+  if(!c||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  for(var i=0;i<18;i++){
+    var p=document.createElement('div');p.className='particle';
+    var s=Math.random()*4+2;
+    p.style.cssText='width:'+s+'px;height:'+s+'px;left:'+(Math.random()*100)+'%;animation-duration:'+(Math.random()*15+12)+'s;animation-delay:'+(-Math.random()*22)+'s;filter:blur('+(Math.random()*2)+'px)';
+    c.appendChild(p);
+  }
+})();
+(function(){
+  var els=document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale');
+  if(!('IntersectionObserver'in window)){els.forEach(function(e){e.classList.add('visible')});return;}
+  var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(e){io.observe(e)});
+})();
+window.addEventListener('scroll',function(){document.querySelector('nav').style.padding=window.scrollY>50?'9px clamp(16px,4vw,40px)':'15px clamp(16px,4vw,40px)'},{passive:true});
+</script>
+</body>
+</html>
