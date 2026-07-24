@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>ChallengeTies — Opening your invite…</title>
+<meta name="theme-color" content="#0B1120">
+<!-- iOS Smart App Banner fallback -->
+<meta name="apple-itunes-app" content="app-id=6751504640">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--orange:#F97316;--orange2:#FB923C;--navy:#0B1120;--navy2:#0F1729;--white:#F8FAFC;--muted:rgba(248,250,252,.6);--border:rgba(248,250,252,.1)}
+  body{font-family:'Comfortaa',system-ui,sans-serif;background:var(--navy);color:var(--white);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;line-height:1.5}
+  .card{max-width:440px;width:100%;text-align:center;background:var(--navy2);border:1px solid var(--border);border-radius:22px;padding:36px 28px;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+  .logo{width:64px;height:64px;border-radius:16px;margin:0 auto 20px;box-shadow:0 0 24px rgba(249,115,22,.4)}
+  h1{font-size:21px;font-weight:700;margin-bottom:10px}
+  p{color:var(--muted);font-size:14.5px;margin-bottom:22px}
+  .spinner{width:34px;height:34px;border:3px solid rgba(249,115,22,.2);border-top-color:var(--orange);border-radius:50%;margin:0 auto 22px;animation:spin .8s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .btns{display:flex;gap:10px;flex-direction:column}
+  a.btn{display:block;padding:14px 18px;border-radius:12px;text-decoration:none;font-weight:600;font-size:15px;transition:.2s}
+  .primary{background:var(--orange);color:#fff}
+  .primary:hover{background:var(--orange2)}
+  .ghost{background:transparent;color:var(--white);border:1px solid var(--border)}
+  .ghost:hover{border-color:var(--orange)}
+</style>
+</head>
+<body>
+  <div class="card">
+    <img class="logo" src="/assets/logo.webp" width="64" height="64" alt="ChallengeTies">
+    <div class="spinner" id="spinner"></div>
+    <h1>Opening your challenge…</h1>
+    <p>We're trying to open ChallengeTies. If nothing happens, install it below and your invite will be waiting.</p>
+    <div class="btns">
+      <a id="openApp" class="btn primary" href="#">Open the app</a>
+      <a id="storeLink" class="btn ghost" href="#" rel="noreferrer noopener">Get ChallengeTies</a>
+    </div>
+  </div>
+<script>
+(function(){
+  var params=new URLSearchParams(location.search);
+  var challengeId=params.get("id")||params.get("challengeId")||"";
+  var invite=params.get("invite")||"";
+  var days=params.get("days")||"";
+  var lang=(params.get("lang")||"en").toLowerCase();
+
+  var qp=new URLSearchParams();
+  if(invite)qp.set("invite",invite);
+  if(days)qp.set("days",days);
+  if(lang)qp.set("lang",lang);
+
+  var deepBase="myapp://challenge-details";
+  var deep=challengeId?deepBase+"/"+encodeURIComponent(challengeId)+"?"+qp:deepBase+"?"+qp;
+
+  var iosStore="https://apps.apple.com/app/id6751504640";
+  var androidStore="https://play.google.com/store/apps/details?id=com.mxcrts.ChallengeTies";
+  var ua=navigator.userAgent||"";
+  var isAndroid=/Android/i.test(ua);
+  var store=isAndroid?androidStore:iosStore;
+
+  document.getElementById("openApp").setAttribute("href",deep);
+  document.getElementById("storeLink").setAttribute("href",store);
+
+  function openThenFallback(){
+    window.location.href=deep;
+    setTimeout(function(){window.location.href=store;},1400);
+  }
+  openThenFallback();
+})();
+</script>
+</body>
+</html>
