@@ -11,6 +11,14 @@
   from = "/delete-account"
   to = "/delete-account.html"
   status = 200
+[[redirects]]
+  from = "/contact"
+  to = "/contact.html"
+  status = 200
+[[redirects]]
+  from = "/fr/contact"
+  to = "/fr/contact.html"
+  status = 200
 
 # ── .well-known must be served as JSON (deep links / universal links) ──
 [[headers]]
